@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f172a">
+  <title>Daily Expense Tracker</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+  <header class="top"><div><p class="eyebrow">DAILY PROJECT · DAY 4</p><h1>Expense Tracker</h1><p class="sub">Keep today's spending simple and organized.</p></div><span class="wallet" aria-hidden="true">₹</span></header>
+  <section class="summary" aria-label="Expense summary">
+    <article class="summary-card total"><span>Total spent</span><strong id="totalAmount">₹0.00</strong><small id="expenseCount">0 expenses recorded</small></article>
+    <article class="summary-card"><span>Largest expense</span><strong id="largestAmount">₹0.00</strong><small id="largestLabel">No expenses yet</small></article>
+  </section>
+  <section class="panel"><h2>Add an expense</h2>
+    <form id="expenseForm">
+      <label>What did you spend on?<input id="expenseName" maxlength="60" placeholder="e.g. Lunch" required></label>
+      <div class="form-row">
+        <label>Amount (₹)<input id="expenseAmount" type="number" min="0.01" step="0.01" placeholder="150" required></label>
+        <label>Category<select id="expenseCategory"><option>Food</option><option>Travel</option><option>Shopping</option><option>Bills</option><option>Study</option><option>Other</option></select></label>
+      </div>
+      <button type="submit">+ Add expense</button><p class="form-message" id="formMessage" role="status"></p>
+    </form>
+  </section>
+  <section class="panel list-panel">
+    <div class="list-heading"><div><h2>Recent expenses</h2><p class="muted">Saved in this browser on your device.</p></div>
+      <label class="filter-label"><span class="sr-only">Filter by category</span><select id="categoryFilter"><option value="All">All categories</option><option>Food</option><option>Travel</option><option>Shopping</option><option>Bills</option><option>Study</option><option>Other</option></select></label>
+    </div>
+    <ul id="expenseList" class="expense-list"></ul>
+    <div id="emptyState" class="empty-state"><span aria-hidden="true">🧾</span><strong>No expenses yet</strong><p>Add your first expense above to get started.</p></div>
+    <button id="clearAll" class="secondary danger" type="button">Clear all expenses</button>
+  </section>
+  <footer>Built with HTML, CSS and JavaScript · Your data stays in your browser</footer>
+</main><script src="script.js"></script>
+</body></html>
